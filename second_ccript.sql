@@ -1,0 +1,11 @@
+create database synergy_2;
+show databases;
+use synergy_2;
+create table stores (id int, title varchar(20), address varchar (40), city char(20), working_hours varchar(20));
+create index inx on stores (id,title); 
+insert into  stores (id, title, address, city, working_hours) values ('0', 'Пятёрочка', 'ул. Семёнова, 47', 'Москва', '08:00-22:00'),('1', 'Пятёрочка ', 'ул. Вовы, 32', 'Санкт-Петербург', '8:00-22:00'),('2', 'Перекрёсток', 'ул. Семёнова, 48', 'Москва', 'круглосуточно'),('0', 'Пятёрочка', 'ул. Семёнова, 47', 'Москва', '08:30-22:30'),('3', 'Перекрёсток', 'ул. Татьяны Б., 1', 'Ижевск', '09:00-21:00');
+update stores set title = 'Пятёрочка 2' where title = 'Пятёрочка';
+update stores set address = 'пр-т Орлова, 33' where city = 'Ижевск';
+update stores set title = 'Всегда открыто' , address = 'Рядом с домом' where working_hours = 'круглосуточно';
+delete from stores where id = 2;
+select * from stores;

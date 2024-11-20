@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  swarmpit:
+    image: swarmpit/swarmpit:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SWARMPIT_DB=sqlite
+      - SWARMPIT_SERVER=swarm
+    volumes:
+      - swarmpit_data:/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  swarmpit_data:

@@ -1,0 +1,18 @@
+services:
+  webserver-mongo:
+    image: mongo
+    ports:
+      - 777:80
+  webserver-ubuntu:
+    image: ubuntu
+    ports:
+      - 778:80
+  webserver-python:
+    image: python
+    ports:
+      - 770:80
+
+
+
+
+
